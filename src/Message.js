@@ -8,6 +8,11 @@ class Message extends Component {
     this.handleBin = this.handleBin.bind(this);
   }
 
+  // function is called in the onClick event listener
+  // on the 'thumbsup' icon
+  // this function calls on the prop 'onLike' passed through in 'App'
+  // to run the function handleLike using the ID of the post in this component
+  // sent to the function as this.props.id - in this instance
   handleThumbsUp() {
     this.props.onLike(this.props.id)
   }
@@ -24,6 +29,7 @@ class Message extends Component {
     return (
       <li>
         {this.props.text}
+        {/* onCLick event listener triggers the corresponding function within this component's instance */}
         <i class="fa fa-trash pull-right delete" onClick={this.handleBin}></i>
         <i class="fa fa-thumbs-down pull-right" onClick={this.handleThumbsDown}></i>
         <i class="fa fa-thumbs-up pull-right" onClick={this.handleThumbsUp}></i>
