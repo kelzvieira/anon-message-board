@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class MessageBoard extends Component {
+class MessageInput extends Component {
   constructor (props) {
     super(props)
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -36,4 +36,4 @@ class MessageBoard extends Component {
   }
 }
 
-export default MessageBoard
+export default MessageInput
