@@ -12,6 +12,7 @@ class MessageInput extends Component {
   handleSubmit() {
     const text = document.getElementById('message').value
     this.props.onNewPost(text)
+    document.getElementById('message').value = ''
   }
 
   render() {

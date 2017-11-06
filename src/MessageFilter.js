@@ -27,12 +27,13 @@ class MessageFilters extends Component {
 
   render() {
     return (
-      <div>
-        <h5>Sort messages by:</h5>
-          <button id="btn-date-latest" class="btn btn-default" onClick={this.handleLatest}>Latest</button>
-          <button id="btn-date-oldest" class="btn btn-default" onClick={this.handleOldest}>Oldest</button>
-          <button id="btn-likes-most" class="btn btn-default" onClick={this.handleMostLikes}>Most Likes</button>
-          <button id="btn-likes-least" class="btn btn-default" onClick={this.handleLeastLikes}>Least Likes</button>
+      <div className='filter-bar'>
+        <p><span className='filter-bar-label'>Sort posts:</span>
+          <span id="btn-date-latest" className="margin-medium filter-option" onClick={this.handleLatest}>Latest First &darr;</span>
+          <span id="btn-date-oldest" className="margin-medium filter-option" onClick={this.handleOldest}>Oldest First &uarr;</span>
+          <span id="btn-likes-most" className="margin-medium filter-option" onClick={this.handleMostLikes}>Most Likes &uarr;</span>
+          <span id="btn-likes-least" className="margin-medium filter-option" onClick={this.handleLeastLikes}>Least Likes &darr;</span>
+        </p>
       </div>
     )
   }

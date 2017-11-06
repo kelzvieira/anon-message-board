@@ -1,3 +1,39 @@
 .App {
   text-align: center;
 }
+
+.margin-medium {
+  margin: 15px 10px;
+}
+
+.input-search {
+  border-radius: 3px;
+  padding: 5px 10px;
+  border: 1px solid #d8d8d8;
+  width: 310px;
+}
+
+.search-bar {
+  background: #d8d9f1;
+}
+
+.filter-bar {
+  background: #efeffb;
+}
+
+.filter-bar-label {
+  font-weight: 700px;
+  text-decoration: underline;
+}
+
+.filter-option {
+  cursor: pointer;
+  border: 1px solid #c1c1c1;
+  border-radius: 3px;
+  padding: 5px 10px;
+  display: inline-block;
+}
+
+.filter-option:hover {
+  background: #adafea;
+}
