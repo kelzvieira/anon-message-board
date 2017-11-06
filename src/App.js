@@ -17,8 +17,8 @@ class App extends Component {
     // set the default state the app will load when it is first rendered
     this.state = {
       messages: [
-        { id: uuid.v4(), text: "This is a post. Pretty standard stuff.", likes: -1, timestamp: 1509794011149 },
-        { id: uuid.v4(), text: "This is anothher post, only wth some typos init", likes: 3, timestamp: 1509663092732 },
+        { id: uuid.v4(), text: "This is the newest default post. Pretty standard stuff.", likes: -1, timestamp: 1509794011149 },
+        { id: uuid.v4(), text: "This is anothher post, the oldest post, only wth some typos init", likes: 3, timestamp: 1509663092732 },
         { id: uuid.v4(), text: "Oh look! This post's punctuation is different - Fancy.", likes: 2, timestamp: 1509663092790 },
         { id: uuid.v4(), text: "Yet another post – with an emdash this time!", likes: 0, timestamp: 1509663092767 }
       ],
