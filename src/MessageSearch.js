@@ -12,7 +12,7 @@ class MessageSearch extends Component {
     // retrieves user input value
     const text = document.getElementById('search-bar').value
     // retrieves the onSearch function from App and runs it with the above value
-    this.props.onSearch(text)
+    this.props.onSearch(this.props.errorMessage,text)
     document.getElementById('search-bar').value = ''
   }
 

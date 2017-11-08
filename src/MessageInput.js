@@ -17,17 +17,17 @@ class MessageInput extends Component {
 
   render() {
     return (
-      <div class="panel-group">
-        <div class="panel panel-primary">
-          <div class="panel-heading">{this.props.title}</div>
-          <div class="panel-body">
-            <div class="form-group">
+      <div className="panel-group">
+        <div className="panel panel-primary">
+          <div className="panel-heading">{this.props.title}</div>
+          <div className="panel-body">
+            <div className="form-group">
               <label>{this.props.inputLabel}</label>
               {/* using id 'message' to retrieve the value entered by user in handleSubmit getElementById method */}
-              <textarea id="message" type="text" class="form-control"></textarea>
+              <textarea id="message" type="text" className="form-control"></textarea>
             </div>
             {/* event listener to check when button is clicked to then trigger 'handleSubmit' event */}
-            <button id="submit" class="btn btn-default" onClick={this.handleSubmit}>
+            <button id="submit" className="btn btn-default" onClick={this.handleSubmit}>
               {this.props.buttonText}
             </button>
           </div>

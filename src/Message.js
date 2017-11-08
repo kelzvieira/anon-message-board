@@ -30,10 +30,10 @@ class Message extends Component {
       <li>
         {this.props.text}
         {/* onCLick event listener triggers the corresponding function within this component's instance */}
-        <i class="fa fa-trash pull-right delete" onClick={this.handleBin}></i>
-        <i class="fa fa-thumbs-down pull-right" onClick={this.handleThumbsDown}></i>
-        <i class="fa fa-thumbs-up pull-right" onClick={this.handleThumbsUp}></i>
-        <div class="pull-right">{this.props.likes}</div>
+        <i className="fa fa-trash pull-right delete" onClick={this.handleBin}></i>
+        <i className="fa fa-thumbs-down pull-right" onClick={this.handleThumbsDown}></i>
+        <i className="fa fa-thumbs-up pull-right" onClick={this.handleThumbsUp}></i>
+        <div className="pull-right">{this.props.likes}</div>
       </li>
     )
   }

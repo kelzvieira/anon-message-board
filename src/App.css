@@ -37,3 +37,16 @@
 .filter-option:hover {
   background: #adafea;
 }
+
+.error-message {
+  padding: 15px 20px;
+  margin: 15px;
+  border: 1px solid #e74e3d;
+  color: #e74e3d;
+  background: #f9d0d0;
+  display: block;
+}
+
+.no-error-message {
+  display: none !important;
+}

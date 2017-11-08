@@ -7,9 +7,9 @@ class Header extends Component {
   }
   render() {
     return (
-      <nav class="navbar">
-        <div class="container-fluid">
-          <div class="navbar-header ">
+      <nav className="navbar">
+        <div className="container-fluid">
+          <div className="navbar-header ">
             {/* using the 'props' to populate the title  */}
             <h1>{this.props.title}</h1>
           </div>

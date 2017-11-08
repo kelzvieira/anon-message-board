@@ -27,7 +27,7 @@ class App extends Component {
       // a computered state - which leaves the original state (ie. the 'true' state) of all messages posted untouched
       searchText: '',
     }
-    // bind functions in this component
+    // bind methods in this component
     this.handleLike = this.handleLike.bind(this);
     this.handleDislike = this.handleDislike.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
@@ -66,7 +66,7 @@ class App extends Component {
 
   handleDelete(id) {
     // same as above but filtering down to all 'messages' objects in the array
-    // minus the one that matches the Id passed through 'Message' component's 'handleBin'
+    // minus the one that matches the id passed through 'Message' component's 'handleBin'
     // and setting that as a new variable 'newMessages'
     const newMessages = this.state.messages.filter(
       message => message.id !== id
@@ -137,25 +137,32 @@ class App extends Component {
     })
   }
 
-  handleSearch(text) {
+  handleSearch(err,query) {
     // receives 'text' value from user input in the MessageSearch component
     // sets this 'text' value as the searchText state to be called on as a filter value
     // when this.state.messages are called in this app
     this.setState({
-      searchText: text,
+      searchText: query,
     })
-  }
-
-  getTimeStamp() {
-    let date = new Date()
-    let timestamp = date.getTime()
-    console.log(timestamp)
+    if (this.state.messages.filter(message => message.text.toLowerCase().includes(query.toLowerCase())) == 0) {
+      // if the array of messages after sorting by the user's search query is empty
+      // this changes the class of the search-error <div> below to remove the 'display: none' attribute
+      document.getElementById('search-error').className = 'error-message'
+      // err is taken as a prop from this App, passed to MessageSearch component
+      // and then returned back into this App via this handleSearch method
+      // to set the copy shown in the error message
+      document.getElementById('search-error').innerText = err
+    } else {
+      // if the array of messages after searching is not empty
+      // the error-message <div> keeps (or gains) the 'display: none' attribute
+      document.getElementById('search-error').className = 'no-error-message'
+    }
   }
 
   render() {
     return (
       <div className="App">
-        <div class="container">
+        <div className="container">
           {/* call the component 'Header' and pass it a 'prop' named 'title' with the value 'Anon Message Board' */}
           <Header title={"Anon Message Board"} />
           {/* Call the 'MessageBoard' component and pass through the title, label, button text
@@ -168,10 +175,10 @@ class App extends Component {
             onNewPost={this.handleNewPost}
           />
 
-          <div class="panel-group">
-            <div class="panel panel-primary">
-              <div class="panel-heading">Message Board</div>
-              <MessageSearch onSearch={this.handleSearch}/>
+          <div className="panel-group">
+            <div className="panel panel-primary">
+              <div className="panel-heading">Message Board</div>
+              <MessageSearch onSearch={this.handleSearch} errorMessage={'It looks like we don\'t have any posts matching your search query. Please try again.'}/>
               {/* add logic for if element is true / false to show / hide results and inversely show / hide message board*/}
               <MessageFilter
                 /* these will be callbacks - functions sent to other functions in another component
@@ -180,8 +187,9 @@ class App extends Component {
                 onFilterOldest={this.handleFilterOldest}
                 onFilterMostLikes={this.handleFilterMostLikes}
                 onFilterLeastLikes={this.handleFilterLeastLikes}/>
-              <div class="panel-body">
-                <ul class="message-board">
+              <div className="panel-body">
+                <div id='search-error' className='no-error-message'></div>
+                <ul className="message-board">
                   {/* run through all objects within 'messages' array and remake each object
                   in the format that sends each property value to the 'Message' component correctly mapped as props */}
                   {this.state.messages
