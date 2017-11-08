@@ -18,7 +18,7 @@ class MessageSearch extends Component {
 
   handleSearchClear() {
     // sets the searchText state to an empty string
-    this.props.onSearch('')
+    this.props.onSearch(this.props.errorMessage,"")
   }
 
   render() {
